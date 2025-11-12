@@ -4,16 +4,22 @@ resource "sca_policy" "rmg-demo-az-muskernet" {
   csp          = "AZURE"
   roles        = [
      {
-      entity_id        = "/subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"   #Contributor
-      entity_source_id = "subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63"
+      entity_id        = "/subscriptions/1d1f0af3-44c7-4ee3-ab28-3f41eefa34b7/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"   #Contributor
+      entity_source_id = "subscriptions/1d1f0af3-44c7-4ee3-ab28-3f41eefa34b7" #Muskernet-Subscription 2
       workspace_type   = "subscription"
-      organization_id  = "d8a8541b-d35c-4c6b-9be7-553bd08213d9"
+      organization_id  = "2c6fb0b2-1423-4643-bb59-28243dbe4011"
     },
     {
-      entity_id        = "/subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7"   #Reader
-      entity_source_id = "subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63"
+      entity_id        = "/subscriptions/1d1f0af3-44c7-4ee3-ab28-3f41eefa34b7/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7"   #Reader
+      entity_source_id = "subscriptions/1d1f0af3-44c7-4ee3-ab28-3f41eefa34b7" #Muskernet-Subscription 2
       workspace_type   = "subscription"
-      organization_id  = "d8a8541b-d35c-4c6b-9be7-553bd08213d9"
+      organization_id  = "2c6fb0b2-1423-4643-bb59-28243dbe4011"
+    },
+    {
+      entity_id        = "/subscriptions/d66270fc-630f-4ade-b4d3-e2c134a1cae5/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7"   #Reader
+      entity_source_id = "subscriptions/d66270fc-630f-4ade-b4d3-e2c134a1cae5" #Muskernet-Subscription1
+      workspace_type   = "subscription"
+      organization_id  = "2c6fb0b2-1423-4643-bb59-28243dbe4011"
     }
   ]
   identities   = [

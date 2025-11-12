@@ -11,7 +11,7 @@ resource "sca_policy" "rmg-demo-az-muskernetO365" {
     },
     {
       entity_id        = "/subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7"   #Reader
-      entity_source_id = "subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63"
+      entity_source_id = "subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63" #MuskernetO365-Sub1
       workspace_type   = "subscription"
       organization_id  = "d8a8541b-d35c-4c6b-9be7-553bd08213d9"
     }
