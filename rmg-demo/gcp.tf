@@ -1,4 +1,4 @@
-resource "sca_policy" "rmg-demo-az-muskernetO365" {
+resource "sca_policy" "rmg-demo-gcp-muskernetgcp001" {
   name         = "RMG-Demo-Azure-GCP"
   description  = "Grants access to roles for subscriptions in GCP Org"
   csp          = "GCP"
@@ -32,7 +32,7 @@ resource "sca_policy" "rmg-demo-az-muskernetO365" {
       "friday"
     ]
     from_time            = "09:00"
-    to_time              = "19:00"
+    to_time              = "21:00"
     max_session_duration = 2
     time_zone            = "Europe/London"
   }

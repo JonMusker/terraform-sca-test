@@ -38,7 +38,7 @@ resource "sca_policy" "rmg-demo-az-muskernet" {
       "friday"
     ]
     from_time            = "09:00"
-    to_time              = "19:00"
+    to_time              = "21:00"
     max_session_duration = 2
     time_zone            = "Europe/London"
   }
