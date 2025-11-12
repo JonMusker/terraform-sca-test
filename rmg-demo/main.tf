@@ -37,7 +37,7 @@ resource "sca_policy" "rmg-demo-az-muskernetO365" {
   identities   = [
     {
       entity_name       = "ACME Cloud Admins"
-      entity_source_id  = "id"
+      entity_source_id  = "09B9A9B0-6CE8-465F-AB03-65766D33B05E"
       entity_class      = "role"
     }
   ]
