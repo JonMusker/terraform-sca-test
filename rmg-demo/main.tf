@@ -13,10 +13,12 @@ provider "sca" {
   platform_domain_name = var.platform_domain_name
   username             = var.username
   password             = var.password
+  debug                = true
 }
 
 resource "sca_policy" "rmg-demo-az-muskernetO365" {
   name         = "RMG-Demo-Azure-MuskernetO365"
+  description  = "Grants access to roles for subscriptions in Azure tenant MuskernetO365"
   csp          = "AZURE"
   roles        = [
      {
@@ -34,7 +36,7 @@ resource "sca_policy" "rmg-demo-az-muskernetO365" {
   ]
   identities   = [
     {
-      entity_id         = "ACME Cloud Admins"
+      entity_name       = "ACME Cloud Admins"
       entity_source_id  = "id"
       entity_class      = "role"
     }
