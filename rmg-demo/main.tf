@@ -15,12 +15,43 @@ provider "sca" {
   password             = var.password
 }
 
-resource "sca_policy" "rmg-demo-az-muskernet" {
-  name         = "RMG-Demo-Azure-Muskernet"
+resource "sca_policy" "rmg-demo-az-muskernetO365" {
+  name         = "RMG-Demo-Azure-MuskernetO365"
   csp          = "AZURE"
-  roles        = var.roles
-  identities   = var.identities
-  access_rules = var.access_rules
-  end_date     = var.end_date
-  start_date   = var.start_date
+  roles        = [
+     {
+      entity_id        = "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"   #Contributor
+      entity_source_id = "/subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63"
+      workspace_type   = "subscription"
+      organization_id  = "d8a8541b-d35c-4c6b-9be7-553bd08213d9"
+    },
+    {
+      entity_id        = "/providers/Microsoft.Authorization/roleDefinitions/acdd72a7-3385-48ef-bd42-f606fba81ae7"   #Reader
+      entity_source_id = "/subscriptions/78e4f18f-7011-4870-af85-e5c33d019b63"
+      workspace_type   = "subscription"
+      organization_id  = "d8a8541b-d35c-4c6b-9be7-553bd08213d9"
+    }
+  ]
+  identities   = [
+    {
+      entity_id         = "ACME Cloud Admins"
+      entity_source_id  = "id"
+      entity_class      = "role"
+    }
+  ]
+  access_rules = {
+    days = [
+      "monday",
+      "tuesday",
+      "wednesday",
+      "thursday",
+      "friday"
+    ]
+    from_time            = "09:00"
+    to_time              = "19:00"
+    max_session_duration = 1
+    time_zone            = "Europe/London"
+  }
+  end_date     = "2026-01-12T00:00:00.000Z"
+  start_date   = "2025-11-13T00:00:00.000Z"
 }
