@@ -20,7 +20,14 @@ resource "sca_policy" "rmg-demo-az-muskernet" {
       entity_source_id = "subscriptions/d66270fc-630f-4ade-b4d3-e2c134a1cae5" #Muskernet-Subscription1
       workspace_type   = "subscription"
       organization_id  = "2c6fb0b2-1423-4643-bb59-28243dbe4011"
-    }
+    } /*,
+    {
+      entity_id        = "/subscriptions/d66270fc-630f-4ade-b4d3-e2c134a1cae5/providers/Microsoft.Authorization/roleDefinitions/8e3af657-a8ff-443c-a75c-2fe8c4bcb635"   #Owner
+      entity_source_id = "subscriptions/d66270fc-630f-4ade-b4d3-e2c134a1cae5" #Muskernet-Subscription1
+      workspace_type   = "subscription"
+      organization_id  = "2c6fb0b2-1423-4643-bb59-28243dbe4011"
+    } */
+    
   ]
   identities   = [
     {
